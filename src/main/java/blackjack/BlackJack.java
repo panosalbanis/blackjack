@@ -4,6 +4,7 @@ import blackjack.game.Deck;
 import blackjack.game.Hand;
 
 import java.io.IOException;
+import java.util.Scanner;
 
 public class BlackJack {
 
@@ -13,6 +14,7 @@ public class BlackJack {
 	private final static String DEALER_WINS = "Dealer wins, sorry.";
 
 	public static void main(String[] args) throws IOException {
+		Scanner scanner = new Scanner(System.in);
 		Deck deck = new Deck();
 		Hand dealer = new Hand();
 		Hand player = new Hand();
@@ -41,10 +43,10 @@ public class BlackJack {
 				return;
 			}
 			System.out.println("hit? (y/n)");
-			char answer = (char)System.in.read();
-			if (answer == 'y') {
+			String answer = scanner.nextLine();
+			if ("y".equals(answer)) {
 				player.add(deck.draw());
-			} else if (answer == 'n') {
+			} else if ("n".equals(answer)) {
 				if (player.value() <= dealer.value()) {
 					System.out.println(DEALER_WINS);
 					return;
