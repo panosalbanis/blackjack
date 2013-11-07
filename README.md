@@ -9,6 +9,6 @@ Build and run
 You will need [gradle]
 
     gradle build
-    java -jar build/lib/blackjack.jar
+    java -jar build/libs/blackjack.jar
 
 [gradle]: http://www.gradle.org/
